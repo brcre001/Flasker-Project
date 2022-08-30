@@ -9,5 +9,17 @@
 <body>
     <h1>Hello World!</h1>
     <p>This is my Flask static webpage!</p>
+    <p>My name is {{ first_name }}!</p>
+    <p>{{ stuff | safe }}</p>
+    <h3>Favorite Pizza: </h3>
+    <ul>
+    {% for topping in favorite_pizza %}
+        {% if topping == 41 %}
+            <li>{{ topping + 100 }}</li><br/>
+        {% else %}
+        <li>{{ topping }}</li><br/>
+        {% endif %}
+    {% endfor %}
+    </ul>
 </body>
 </html>
